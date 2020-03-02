@@ -1,0 +1,28 @@
+# System alias
+alias at="atom ."
+#alias ls="ls -alhsG"
+alias ls="exa --long --header --git"
+alias hosts="sudo vi /etc/hosts"
+alias prof="sudo vi ~/.zshrc"
+alias sprof=". ~/.zshrc"
+alias aliases="sudo vi ~/.aliases"
+alias vhosts="sudo vi /private/etc/apache2/extra/httpd-vhosts.conf"
+alias console="php app/console"
+alias galias="git config --get-regexp alias"
+alias count="ls -1 | wc -l"
+
+# Directories
+
+## General
+alias cdw="cd ~/workspace/"
+
+## BCGDV
+alias cdb="cd ~/workspace/bcgdv"
+alias cdt="cd ~/workspace/bcgdv/venture-justbuild"
+alias cdf="cd ~/workspace/bcgdv/venture-justbuild/web"
+
+# GIT
+alias g="git "
+alias gs="git status"
+alias gl="git l"
+alias gpr="git pull --rebase"
