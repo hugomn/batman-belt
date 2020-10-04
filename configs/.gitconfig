@@ -1,3 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Hugo Nogueira
+	email = hugomn@gmail.com
+
+[alias]
+
 # Working with branches
 
 # Get the current branch name (not so useful in itself, but used in
@@ -38,7 +46,30 @@ theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 
 # Delete any branches that have been merged into master
 # See also: https://gist.github.com/robmiller/5133264
-delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+delete-merged-branches = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+# Checkout
+co = "!git checkout"
+cob = "!git checkout -b"
 
 # Git add and commit
 ac = "!git add -A && git commit -m"
+
+# Fetch and rebase
+sfr = "!git stash && git fetch origin && git pull --rebase && git stash pop"
+fr = "!git fetch origin && git pull --rebase"
+
+# Stashing
+st = "!git stash"
+stp = "!git stash pop"
+
+# Logs
+l = "!git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+[color]
+	ui = auto
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
